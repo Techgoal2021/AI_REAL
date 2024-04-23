@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder Bot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Navbar container -->
+    <div class="navbar">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="/static/upload/Reminda2.png" alt="Logo" class="logo">
+        </div>
+        
+        <!-- Navbar links -->
+        <div class="navbar-links">
+            <a href="#">Products</a>
+            <a href="#">Solutions</a>
+            <a href="#">Pricing</a>
+            <a href="#">Resources</a>
+        </div>
+        
+        <!-- ReminDaBot -->
+        <div class="remindabot">
+            <div class="reminder-bot-header" onclick="toggleReminderBot()">
+                <h1>ReminDaBot</h1>
+            </div>
+        </div>
+        
+        <!-- Login and Get Started buttons -->
+        <div class="login-get-started">
+            <a href="#">Log In</a>
+            <a href="#" class="get-started-button">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Reminder bot container -->
+    <div class="reminder-bot-container" id="reminder-bot-container">
+        <!-- Reminder bot content -->
+        <div class="reminder-bot-content" id="reminder-bot-content">
+            <!-- Add Reminder form -->
+            <h2>Add Reminder</h2>
+            <form id="add-reminder-form" action="/add_reminder" method="post" class="reminder-bot-form">
+                <!-- Add reminder form fields -->
+                <label for="event_type">Event Type:</label>
+                <input type="text" id="event_type" name="event_type" required><br><br>
+                
+                <label for="year">Year:</label>
+                <input type="number" id="year" name="year" required><br><br>
+                
+                <label for="month">Month:</label>
+                <input type="number" id="month" name="month" min="1" max="12" required><br><br>
+                
+                <label for="day">Day:</label>
+                <input type="number" id="day" name="day" min="1" max="31" required><br><br>
+                
+                <label for="recurring">Recurring:</label>
+                <select id="recurring" name="recurring">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select><br><br>
+                
+                <input type="submit" value="Add Reminder">
+            </form>
+            
+            <hr>
+            
+            <!-- List of Reminders -->
+            <h2 class="reminder-list-header" onclick="toggleReminderList()">List of Reminders</h2>
+            <ul id="list-of-reminders" class="reminder-list">
+                {% for reminder in reminders %}
+                <li>{{ reminder.type }} - {{ reminder.date }} - Recurring: {{ reminder.recurring }}</li>
+                {% endfor %}
+            </ul>
+            
+            <hr>
+
+            <!-- Check Upcoming Reminders -->
+            <h2 class="upcoming-reminders-header" onclick="toggleUpcomingReminders()">Check Upcoming Reminders</h2>
+            <ul id="check-upcoming-reminders" class="upcoming-reminders-list">
+                {% for reminder in upcoming_reminders %}
+                <li>{{ reminder.type }} - {{ reminder.date }} - Recurring: {{ reminder.recurring }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Script to toggle reminder bot visibility -->
+    <script>
+        function toggleReminderBot() {
+            var content = document.getElementById('reminder-bot-content');
+            var toggleButton = document.getElementById('toggle-button');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggleButton.textContent = 'Close';
+            } else {
+                content.style.display = 'none';
+                toggleButton.textContent = 'Open';
+            }
+        }
+
+        function toggleReminderList() {
+            var list = document.getElementById('list-of-reminders');
+            var header = document.querySelector('.reminder-list-header');
+            if (list.style.display === 'none' || list.style.display === '') {
+                list.style.display = 'block';
+                header.style.cursor = 'default'; // Disable pointer cursor
+            } else {
+                list.style.display = 'none';
+                header.style.cursor = 'pointer'; // Restore pointer cursor
+            }
+        }
+
+        function toggleUpcomingReminders() {
+            var list = document.getElementById('check-upcoming-reminders');
+            var header = document.querySelector('.upcoming-reminders-header');
+            if (list.style.display === 'none' || list.style.display === '') {
+                list.style.display = 'block';
+                header.style.cursor = 'default'; // Disable pointer cursor
+            } else {
+                list.style.display = 'none';
+                header.style.cursor = 'pointer'; // Restore pointer cursor
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    /* Fallback color if the background image is not loaded */
+    background-image: url("/static/upload/REMAINDa.OrgBanner.png");
+    background-size: cover;
+    /* Add opacity to the background image */
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Adjust the alpha value (0.7 for 70% opacity) */
+}
+
+
+/* Header */
+.header {
+    background-image: url("/static/upload/REMAINDa.OrgBanner.png");
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    /* Adjust height as needed */
+    position: relative;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black overlay */
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    /* White text color */
+    text-align: center;
+    padding-top: 100px;
+    /* Adjust top padding as needed */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #333;
+    /* Dark gray background color */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-links a {
+    color: #eb772d;
+    /* White text color */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    /* Smooth transition on hover */
+}
+
+.navbar-links a:hover {
+    background-color: #555;
+    /* Darker gray background color on hover */
+}
+
+/* Updated style for the reminder bot header */
+.reminder-bot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    /* Reduce margin for better alignment */
+    font-family: 'Comic Sans MS', cursive;
+    /* Set the font family to Comic Sans MS or any other comical font */
+}
+
+.reminder-bot-header h1 {
+    color: green;
+    /* Set text color */
+    font-size: 24px;
+    /* Adjust font size if needed */
+    font-weight: bold;
+    /* Set font weight */
+}
+
+
+
+.login-get-started a {
+    color: #fff;
+    /* White text color */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #eb772d;
+    /* Orange background color */
+    transition: background-color 0.3s ease;
+    /* Smooth transition on hover */
+}
+
+.login-get-started a:hover {
+    background-color: #d4640d;
+    /* Darker orange background color on hover */
+}
+
+/* Logo */
+.logo {
+    width: 80px;
+    height: 80px;
+}
+
+/* Style for the reminder bot container */
+.reminder-bot-container {
+    background-color: #eb772d;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Increase width for better spacing */
+    margin: 20px auto;
+    padding: 20px;
+    height: auto; /* Change to auto to allow dynamic height */
+    max-height: 400px; /* Set a maximum height to prevent overstretching */
+    overflow-y: auto; /* Add vertical scroll bar when content exceeds height */
+}
+
+
+/* Style for the reminder bot header */
+.reminder-bot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Style for the remindabot logo */
+.remindabot-logo {
+    width: 60px;
+    /* Adjust logo size */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+/* Style for the remindabot title */
+.remindabot-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    /* Dark text color */
+}
+
+/* Style for the remindabot toggle button */
+.remindabot-toggle-button {
+    background-color: #eb772d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remindabot-toggle-button:hover {
+    background-color: #d45f1f;
+    /* Darken button color on hover */
+}
+
+/* Style for the reminder bot content */
+.reminder-bot-content {
+    display: none;
+    /* Initially hidden */
+}
+
+/* Style for the reminder bot form fields */
+.reminder-bot-form {
+    margin-bottom: 20px;
+}
+
+/* Style for reminder bot form labels */
+.reminder-bot-form label {
+    font-weight: bold;
+    color: palegreen;
+}
+
+/* Style for reminder bot form inputs */
+.reminder-bot-form input[type="text"],
+.reminder-bot-form input[type="number"],
+.reminder-bot-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    /* Add spacing between form inputs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style for reminder bot submit button */
+.reminder-bot-form input[type="submit"] {
+    background-color: #789f59;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reminder-bot-form input[type="submit"]:hover {
+    background-color: #618944;
+    /* Darken button color on hover */
+}
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+
+    /* Adjust styles for smaller screens */
+    .navbar-links a {
+        padding: 10px;
+    }
+}
+
+/* Animations and Transitions */
+.navbar a {
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #eb772d;
+    /* Change color on hover */
+}
+
+/* Grid Layout */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+/* Flexbox */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Custom Fonts */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Color Scheme */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Transparent background with opacity */
+}
+
+/* Whitespace */
+.container {
+    padding: 20px;
+}
+
+/* Accessibility */
+/* Make sure to use semantic HTML elements and provide alt text for images */
+
+/* Box Shadows and Borders */
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Consistency */
+h1,
+h2,
+h3 {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.navbar {
+    color: #333;
+}
+
+/* Ensure consistency in typography, spacing, and color throughout the website */
